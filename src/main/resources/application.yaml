@@ -1,0 +1,36 @@
+muruna:
+  password-validator: ^.{3,15}$
+server:
+  port: 8088
+spring:
+  application:
+    name: MurunaApiRest
+  datasource:
+    url: jdbc:h2:mem:murunadb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+springdoc:
+  swagger-ui.path: /api/swagger-ui.html
+  api-docs.path: /api/docs
+  disable-swagger-default-url: true
+sbwfjjwt.jjwt:
+  secret: This is a top secret secret secret!!!
+  expiration: 3_600
+logging:
+  level:
+    root: debug
+    org.springframework.web: debug
+    org.hibernate: debug
+    com.muruna.apirest: debug
